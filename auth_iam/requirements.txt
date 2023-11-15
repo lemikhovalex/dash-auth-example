@@ -1,3 +1,9 @@
 dash==1.0.0
 gunicorn==19.9.0
 pyjwt==1.7.1
+six==1.16.0
+flask==1.1.2
+jinja2==2.10.2
+MarkupSafe==1.1.1
+itsdangerous==1.1.0
+Werkzeug==0.16.1

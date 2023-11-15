@@ -16,12 +16,12 @@ RUN mkdir -p $PREFIX \
 # System requirements: python + extras
 RUN apk --no-cache --update add gcc python3 python3-dev py3-setuptools \
                                 musl-dev libffi-dev openssl-dev libxml2-dev \
-                                libxslt-dev
+                                libxslt-dev py-pip
 
 # Requirements
 COPY requirements.txt /requirements.txt
-RUN cd / && pip3 install -r requirements.txt && rm /requirements.txt
+RUN cd / && pip install -r requirements.txt && rm /requirements.txt
 
 # Install dashboard
 COPY ./ /tmp/$REPO_NAME
-RUN cd /tmp/$REPO_NAME && pip3 install . && cd / && rm -r /tmp/$REPO_NAME
+RUN cd /tmp/$REPO_NAME && pip install . && cd / && rm -r /tmp/$REPO_NAME
